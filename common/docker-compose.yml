@@ -16,7 +16,7 @@ services:
       dockerfile: Dockerfile
       tags: ["microservicedemo", "trescontainers-1"]
     ports:
-      - 443:443
+      - 8443:8080
   trescontainers-2:
     depends_on:
         banco:
@@ -26,7 +26,7 @@ services:
       dockerfile: Dockerfile
       tags: ["microservicedemo", "trescontainers-2"]
     ports:
-      - 444:443
+      - 8444:8080
   trescontainers-3:
     depends_on:
         banco:
@@ -36,4 +36,4 @@ services:
       dockerfile: Dockerfile
       tags: ["microservicedemo", "trescontainers-3"]
     ports:
-      - 445:443
+      - 8445:8080
