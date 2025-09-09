@@ -1,0 +1,39 @@
+services:
+  banco:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_DB: postgres  
+    ports:
+      - 5432:5432
+  trescontainers-1:
+    depends_on:
+        banco:
+          condition: service_started
+    build:
+      context: ./turma
+      dockerfile: Dockerfile
+      tags: ["microservicedemo", "trescontainers-1"]
+    ports:
+      - 443:443
+  trescontainers-2:
+    depends_on:
+        banco:
+          condition: service_started
+    build:
+      context: ./estudantes
+      dockerfile: Dockerfile
+      tags: ["microservicedemo", "trescontainers-2"]
+    ports:
+      - 444:443
+  trescontainers-3:
+    depends_on:
+        banco:
+          condition: service_started
+    build:
+      context: ./disciplina
+      dockerfile: Dockerfile
+      tags: ["microservicedemo", "trescontainers-3"]
+    ports:
+      - 445:443
