@@ -1,0 +1,14 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>construcao</groupId>
+    <artifactId>construcao-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>common</module>
+        <module>estudantes</module>
+        <module>turma</module>
+        <module>disciplina</module>
+    </modules>
+</project>

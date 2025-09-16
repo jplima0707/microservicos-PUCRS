@@ -1,13 +1,14 @@
-package com.example.disciplina;
+package com.example.estudantes;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DisciplinaApplication {
+@EntityScan(basePackages = {"construcao.common.Models"})
+public class EstudantesApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DisciplinaApplication.class, args);
+		SpringApplication.run(EstudantesApplication.class, args);
 	}
 
 }
